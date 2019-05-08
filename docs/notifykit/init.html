@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>notifykit</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="../docco-nord.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="file.html">
+                  notifykit/file.lua
+                </a>
+              
+                
+                <a class="source" href="file.html">
+                  notifykit/file.moon
+                </a>
+              
+                
+                <a class="source" href="init.html">
+                  notifykit/init.lua
+                </a>
+              
+                
+                <a class="source" href="init.html">
+                  notifykit/init.moon
+                </a>
+              
+                
+                <a class="source" href="run.html">
+                  notifykit/run.lua
+                </a>
+              
+                
+                <a class="source" href="run.html">
+                  notifykit/run.moon
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <h1 id="notifykit">notifykit</h1>
+<p>Lua notification helper library.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-comment">-- By daelvn</span>
+<span class="hljs-comment">-- 08.05.2019</span>
+lgi  = <span class="hljs-built_in">require</span> <span class="hljs-string">"lgi"</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Start the notif lib</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>Notify = lgi.Notify</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <h1 id="notificationservice">NotificationService</h1>
+<p>Initializes lgi.Notify</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">NotificationService</span> = <span class="hljs-params">(serviceName=<span class="hljs-string">"notifykit"</span>)</span> -&gt;</span> Notify.init serviceName</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <h2 id="isserviceinitialized">isServiceInitialized</h2>
+<p>Checks if a notification service is initialized.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">isServiceInitialized</span> = -&gt;</span> Notify.is_initted!</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <h2 id="servicename">serviceName</h2>
+<p>Returns the service name.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">serviceName</span> = -&gt;</span> Notify.get_app_name service</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <h2 id="setservicename">setServiceName</h2>
+<p>Sets the service name.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">setServiceName</span> = <span class="hljs-params">(name)</span> -&gt;</span> Notify.set_app_name name</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <h2 id="finalizeservice">finalizeService</h2>
+<p>Finalizes the notification service.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">finalizeService</span> = -&gt;</span> Notify.uninit service <span class="hljs-keyword">if</span> isServiceInitialized service</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <h1 id="nativenotification">NativeNotification</h1>
+<p>Creates a new lgi.Notify notification. <a href="https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html">Icon
+list.</a></p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">NativeNotification</span> = <span class="hljs-params">(summary=<span class="hljs-string">"notifykit"</span>, body=<span class="hljs-string">""</span>, icon=<span class="hljs-string">"dialog-information"</span>)</span> -&gt;</span> Notify.Notification.new summary, body, icon</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <h2 id="notify_expires_default">NOTIFY_EXPIRES_DEFAULT</h2>
+<p>Default expiration time on a notification.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>NOTIFY_EXPIRES_DEFAULT = <span class="hljs-number">-1</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <h2 id="notify_expires_never">NOTIFY_EXPIRES_NEVER</h2>
+<p>The notification never expires.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>NOTIFY_EXPIRES_NEVER = <span class="hljs-number">0</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <h2 id="shownativenotification">showNativeNotification</h2>
+<p>Tells the service to display a notification.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">showNativeNotification</span> = <span class="hljs-params">(notification)</span> -&gt;</span> Notify.Notification.show notification</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <h2 id="settimeout">setTimeout</h2>
+<p>Sets the timeout for a notification. Pass <a href="#NOTIFY_EXPIRES_DEFAULT">NOTIFY_EXPIRES_DEFAULT</a> for the default
+expiration time and <a href="#NOTIFY_EXPIRES_NEVER">NOTIFY_EXPIRES_NEVER</a> for it to never expire. The timeout may be ignored
+by the server.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">setTimeout</span> = <span class="hljs-params">(notification, timeout)</span> -&gt;</span> Notify.Notification.set_timeout notification, timeout</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <h2 id="setcategory">setCategory</h2>
+<p>Sets the category of this notification. This can be used by the notification server to filter or display the data in a certain way.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">setCategory</span> = <span class="hljs-params">(notification, category)</span> -&gt;</span> Notify.Notification.set_category notification, category</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <h2 id="notify_urgency_low">NOTIFY_URGENCY_LOW</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>NOTIFY_URGENCY_LOW = <span class="hljs-number">0</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <h2 id="notify_urgency_normal">NOTIFY_URGENCY_NORMAL</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>NOTIFY_URGENCY_NORMAL = <span class="hljs-number">1</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <h2 id="notify_urgency_critical">NOTIFY_URGENCY_CRITICAL</h2>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>NOTIFY_URGENCY_CRITICAL = <span class="hljs-number">2</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <h2 id="seturgency">setUrgency</h2>
+<p>Sets the urgency level of this notification.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">setUrgency</span> = <span class="hljs-params">(notification, urgency)</span> -&gt;</span> Notify.Notification.set_urgency notification, urgency</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <h2 id="closenativenotification">closeNativeNotification</h2>
+<p>Closes a notification.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">closeNativeNotification</span> = <span class="hljs-params">(notification)</span> -&gt;</span> Notify.Notification.close notification</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <h1 id="notification">Notification</h1>
+<p>Creates a new Lua notification, designed for easier handling.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>Notification = (
+    summary=<span class="hljs-string">"notifykit"</span>,
+    body=<span class="hljs-string">""</span>,
+    icon=<span class="hljs-string">"dialog-information"</span>,
+    timeout=NOTIFY_EXPIRES_DEFAULT,
+    urgency=NOTIFY_URGENCY_NORMAL,
+    category=<span class="hljs-string">"notifykit"</span>
+  ) -&gt;
+    { :summary, :body, :icon, :timeout, :urgency, :category }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <h2 id="group">group</h2>
+<p>Groups several Notifications into a single one. Operating on this table will modify the notifications at display
+time.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">group</span> = <span class="hljs-params">(...)</span> -&gt;</span>
+  notifl = {...}
+  {
+    <span class="hljs-name">summary</span>:  <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-name">body</span>:     <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-name">icon</span>:     <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-name">timeout</span>:  <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-name">urgency</span>:  <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-name">category</span>: <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-name">_group</span>:   <span class="hljs-literal">true</span>
+    <span class="hljs-name">_notifl</span>:  notifl
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <h2 id="unpackgroup">unpackGroup</h2>
+<p>Returns all the notifications in a group, modifying them if the parameters in the group were modified.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">unpackGroup</span> = <span class="hljs-params">(gr)</span> -&gt;</span>
+  <span class="hljs-keyword">if</span> gr.summary  != <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-keyword">for</span> notif <span class="hljs-keyword">in</span> *gr._notifl <span class="hljs-keyword">do</span> notif.summary  = gr.summary
+  <span class="hljs-keyword">if</span> gr.body     != <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-keyword">for</span> notif <span class="hljs-keyword">in</span> *gr._notifl <span class="hljs-keyword">do</span> notif.body     = gr.body
+  <span class="hljs-keyword">if</span> gr.icon     != <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-keyword">for</span> notif <span class="hljs-keyword">in</span> *gr._notifl <span class="hljs-keyword">do</span> notif.icon     = gr.icon
+  <span class="hljs-keyword">if</span> gr.timeout  != <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-keyword">for</span> notif <span class="hljs-keyword">in</span> *gr._notifl <span class="hljs-keyword">do</span> notif.timeout  = gr.timeout
+  <span class="hljs-keyword">if</span> gr.urgency  != <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-keyword">for</span> notif <span class="hljs-keyword">in</span> *gr._notifl <span class="hljs-keyword">do</span> notif.urgency  = gr.urgency
+  <span class="hljs-keyword">if</span> gr.category != <span class="hljs-string">"NOMODIFY"</span>
+    <span class="hljs-keyword">for</span> notif <span class="hljs-keyword">in</span> *gr._notifl <span class="hljs-keyword">do</span> notif.category = gr.category
+  gr._notifl</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <h2 id="unpackgroupraw">unpackGroupRaw</h2>
+<p>Returns all the notifications in a group as they were passed.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">unpackGroupRaw</span> = <span class="hljs-params">(gr)</span> -&gt;</span> gr._notifl</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <h2 id="showgroup">showGroup</h2>
+<p>Converts a group of Notifications into NativeNotifications and tells the service to display them.
+You should use <a href="#showNotification">showNotification</a> instead, this is specifically for groups.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">showGroup</span> = <span class="hljs-params">(gr)</span> -&gt;</span>
+  <span class="hljs-built_in">error</span> <span class="hljs-string">"The argument passed to showGroup is not a group"</span> <span class="hljs-keyword">unless</span> gr._group
+  unpacked = unpackGroup gr
+  native   = [NativeNotification notif.summary, notif.body, notif.icon <span class="hljs-keyword">for</span> notif <span class="hljs-keyword">in</span> unpacked]
+  <span class="hljs-keyword">for</span> i, notif <span class="hljs-keyword">in</span> <span class="hljs-built_in">ipairs</span> native
+    setCategory notif, unpacked[i].category
+    setTimeout  notif, unpacked[i].timeout
+    setUrgency  notif, unpacked[i].urgency
+    <span class="hljs-comment">--</span>
+    showNativeNotification notif</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <h2 id="shownotification">showNotification</h2>
+<p>Converts the Notification into a NativeNotification and tells the service to display it.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-title">showNotification</span> = <span class="hljs-params">(notification)</span> -&gt;</span>
+  <span class="hljs-keyword">if</span> notification._group
+    showGroup notification
+  <span class="hljs-keyword">else</span>
+    native = NativeNotification notification.summary, notification.body, notification.icon
+    setCategory native, notification.category <span class="hljs-keyword">or</span> <span class="hljs-string">"notifykit"</span>
+    setTimeout  native, notification.timeout  <span class="hljs-keyword">or</span> NOTIFY_EXPIRES_DEFAULT
+    setUrgency  native, notification.urgency  <span class="hljs-keyword">or</span> NOTIFY_URGENCY_NORMAL
+    <span class="hljs-comment">--</span>
+    showNativeNotification  native
+
+{
+  :NotificationService, :isServiceInitialized, :serviceName, :setServiceName, :finalizeService
+  :NativeNotification,  :showNativeNotification, :closeNativeNotification, :setTimeout, :setUrgency, :setCategory
+  :NOTIFY_URGENCY_LOW, :NOTIFY_URGENCY_NORMAL, :NOTIFY_URGENCY_CRITICAL
+  :NOTIFY_EXPIRES_DEFAULT, :NOTIFY_EXPIRES_NEVER
+  :Notification, :group, :unpackGroup, :unpackGroupRaw, :showGroup, :showNotification
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
