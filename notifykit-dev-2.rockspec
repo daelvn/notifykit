@@ -12,7 +12,6 @@ description = {
     folders with notifykit-run.
   ]],
   homepage = "https://github.com/daelvn/notifykit",
-  license = "MIT/X11"
 }
 dependencies = {
   "lgi"

@@ -15,4 +15,4 @@ Check the docs folder!
 
 ## License
 
-MIT/X11
+This project is released to the public domain.
